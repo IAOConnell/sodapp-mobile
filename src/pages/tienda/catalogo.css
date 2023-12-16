@@ -1,0 +1,13 @@
+
+#ficha-vendedor
+{
+    background-color: aliceblue;
+    border-color: black;
+    border: solid 1px #000000;
+}
+
+#ficha-vendedor h1
+{
+    color: black;
+    text-align: left;
+}

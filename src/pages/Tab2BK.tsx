@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonSearchbar, IonPage, IonTitle, IonToolbar, IonList, IonItem, IonAvatar, IonLabel, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonCol, IonGrid, IonRow } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonList, IonItem, IonAvatar, IonLabel, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonCol, IonGrid, IonRow } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
 import './Tab2.css';
 import { getUsuarios} from '../data/usuarios';
@@ -65,18 +65,18 @@ const Tab2: React.FC = () => {
         setFound(true);
       }
     }); 
+    if (found === false)
+    {
+        window.location.replace('./tab3');
+    }
 	}, []);
 
-  if (found)
-  {
+
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
           <IonTitle>Perfil</IonTitle>
-        </IonToolbar>
-        <IonToolbar>
-          <IonSearchbar placeholder="Buscar" showClearButton="focus"></IonSearchbar>
         </IonToolbar>
       </IonHeader>
 
@@ -96,35 +96,6 @@ const Tab2: React.FC = () => {
       </IonContent>
     </IonPage>
   );
-}
-if (found == false)
-{
-  return(
-    <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Perfil</IonTitle>
-        </IonToolbar>
-        <IonToolbar>
-          <IonSearchbar placeholder="Buscar" showClearButton="focus"></IonSearchbar>
-        </IonToolbar>
-      </IonHeader>
-
-<IonContent fullscreen>
-<IonGrid>
-      <IonCard>
-      <img alt="Silhouette of mountains" src="../resources/error.png" />
-      <IonCardHeader>
-        <IonCardTitle>No has iniciado sesión todavía!</IonCardTitle>
-        <IonCardSubtitle>Inicia sesión en SodaApp para poder ver tu perfil y disfrutar de los mejores precios en sodas y bebidas!</IonCardSubtitle>
-      </IonCardHeader>
-      <IonCardContent><IonItem routerLink="./tab3" > <IonLabel>Iniciar Sesión o Registrarse</IonLabel></IonItem></IonCardContent>
-    </IonCard>
-</IonGrid>
-</IonContent>
-</IonPage>
-  );
-}
 };
 
 export default Tab2;
